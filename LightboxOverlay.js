@@ -111,7 +111,7 @@ var LightboxOverlay = React.createClass({
   },
 
   open: function() {
-    StatusBar.setHidden(true, 'fade');
+    StatusBar.setHidden(Platform.OS === 'android' ? false : true, 'fade');
     this.state.pan.setValue(0);
     this.setState({
       isAnimating: true,
